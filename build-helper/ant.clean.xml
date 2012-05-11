@@ -1,0 +1,15 @@
+<project basedir="." default="clean maven targets">
+	<property name="zats" location="../zats/target" />
+	<property name="common" location="../zats-common/target" />
+	<property name="example" location="../zats-example/target" />
+	<property name="mimic" location="../zats-mimic/target" />
+	<property name="mimic-ext6" location="../zats-mimic-ext6/target" />
+
+	<target name="clean maven targets">
+		<delete dir="${zats}" />
+		<delete dir="${common}" />
+		<delete dir="${example}" />
+		<delete dir="${mimic}" />
+		<delete dir="${mimic-ext6}" />
+	</target>
+</project>
