@@ -1,0 +1,25 @@
+<project default="copy bundles" basedir=".">
+
+	<property name="zats.base.dir" location="../../zats" />
+
+	<property name="zats" location="${zats.base.dir}/zats/target" />
+	<property name="common" location="${zats.base.dir}/zats-common/target" />
+	<property name="example" location="${zats.base.dir}/zats-example/target" />
+	<property name="mimic" location="${zats.base.dir}/zats-mimic/target" />
+	<property name="mimic-ext6" location="${zats.base.dir}/zats-mimic-ext6/target" />
+
+	<target name="copy bundles">
+
+		<copy todir="./target">
+			<!-- zip files -->
+			<fileset dir="${zats}" includes="*.zip" />
+			<fileset dir="${example}" includes="*.zip" />
+
+			<!-- maven bundles -->
+			<fileset dir="${common}" includes="*-bundle.jar" />
+			<fileset dir="${mimic}" includes="*-bundle.jar" />
+			<fileset dir="${mimic-ext6}" includes="*-bundle.jar" />
+		</copy>
+
+	</target>
+</project>
