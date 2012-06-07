@@ -1,0 +1,67 @@
+<project default="main" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
+	<!-- change this first-->
+	<property name="version" value="1.1.0.FL.20120607" />
+	<property name="maven" location="C:/apache-maven-3.0.4" />
+
+	<import file="properties.xml" />
+	<path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+
+	<target name="main" depends="clean, versions, bundles, copy">
+	</target>
+
+	<target name="clean">
+		<delete dir="${basedir}/target" />
+		<mkdir dir="${basedir}/target" />
+	</target>
+
+	<target name="versions">
+		<artifact:mvn pom="${zats.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${common.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${example.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${mimic.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${mimic-ext6.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+	</target>
+
+	<target name="bundles">
+		<artifact:mvn pom="${zats.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="clean" />
+			<arg value="package" />
+			<arg value="source:jar" />
+			<arg value="javadoc:jar" />
+			<arg value="repository:bundle-create" />
+			<arg value="-DskipTests" />
+		</artifact:mvn>
+	</target>
+
+	<target name="copy">
+
+		<copy todir="./target">
+			<!-- zip files -->
+			<fileset dir="${zats.target}" includes="*.zip" />
+			<fileset dir="${example.target}" includes="*.zip" />
+
+			<!-- maven bundles -->
+			<fileset dir="${common.target}" includes="*-bundle.jar" />
+			<fileset dir="${mimic.target}" includes="*-bundle.jar" />
+			<fileset dir="${mimic-ext6.target}" includes="*-bundle.jar" />
+		</copy>
+	</target>
+
+</project>

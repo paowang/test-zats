@@ -1,0 +1,32 @@
+<project default="versions" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	
+	<property name="version" value="1.1.0.FL.20120607" />
+	<import file="properties.xml" />
+
+	<path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+
+	<target name="versions">
+		<artifact:mvn pom="${zats.path}/pom.xml">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${common.path}/pom.xml">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${example.path}/pom.xml">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${mimic.path}/pom.xml">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+		<artifact:mvn pom="${mimic-ext6.path}/pom.xml">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
+	</target>
+	
+</project>

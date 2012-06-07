@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	
+	<property name="base" location="../../zats" /> 
+	
+	<!-- project names -->
+	<property name="zats" value="zats" />
+	<property name="common" value="zats-common" />
+	<property name="example" value="zats-example" />
+	<property name="mimic" value="zats-mimic" />
+	<property name="mimic-ext6" value="zats-mimic-ext6" />
+	
+	<!-- paths -->
+	<property name="zats.path" location="${base}/${zats}" />
+	<property name="common.path" location="${base}/${common}" />
+	<property name="example.path" location="${base}/${example}" />
+	<property name="mimic.path" location="${base}/${mimic}" />
+	<property name="mimic-ext6.path" location="${base}/${mimic-ext6}" />
+	
+	<!-- target paths -->
+	<property name="zats.target" location="${base}/${zats}/target" />
+	<property name="common.target" location="${base}/${common}/target" />
+	<property name="example.target" location="${base}/${example}/target" />
+	<property name="mimic.target" location="${base}/${mimic}/target" />
+	<property name="mimic-ext6.target" location="${base}/${mimic-ext6}/target" />
+</project>
