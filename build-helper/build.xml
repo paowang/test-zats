@@ -19,26 +19,32 @@
 		<artifact:mvn pom="${zats.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 		<artifact:mvn pom="${common.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 		<artifact:mvn pom="${example.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 		<artifact:mvn pom="${mimic.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 		<artifact:mvn pom="${mimic-ext6.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 		<artifact:mvn pom="${mimic-ext7.path}/pom.xml" mavenversion="3.0.4">
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
+			<arg value="-DgenerateBackupPoms=false" />
 		</artifact:mvn>
 	</target>
 
