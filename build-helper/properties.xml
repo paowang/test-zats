@@ -9,6 +9,7 @@
 	<property name="example" value="zats-example" />
 	<property name="mimic" value="zats-mimic" />
 	<property name="mimic-ext6" value="zats-mimic-ext6" />
+	<property name="mimic-ext7" value="zats-mimic-ext7" />
 	
 	<!-- paths -->
 	<property name="zats.path" location="${base}/${zats}" />
@@ -16,6 +17,7 @@
 	<property name="example.path" location="${base}/${example}" />
 	<property name="mimic.path" location="${base}/${mimic}" />
 	<property name="mimic-ext6.path" location="${base}/${mimic-ext6}" />
+	<property name="mimic-ext7.path" location="${base}/${mimic-ext7}" />
 	
 	<!-- target paths -->
 	<property name="zats.target" location="${base}/${zats}/target" />
@@ -23,4 +25,5 @@
 	<property name="example.target" location="${base}/${example}/target" />
 	<property name="mimic.target" location="${base}/${mimic}/target" />
 	<property name="mimic-ext6.target" location="${base}/${mimic-ext6}/target" />
+	<property name="mimic-ext7.target" location="${base}/${mimic-ext7}/target" />
 </project>

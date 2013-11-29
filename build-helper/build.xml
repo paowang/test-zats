@@ -1,7 +1,7 @@
 <project default="main" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
 	<!-- change this first-->
-	<property name="version" value="1.1.0.FL.20120607" />
+	<property name="version" value="1.2.0" />
 
 	<import file="properties.xml" />
 	<path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
@@ -36,6 +36,10 @@
 			<arg value="versions:set" />
 			<arg value="-DnewVersion=${version}" />
 		</artifact:mvn>
+		<artifact:mvn pom="${mimic-ext7.path}/pom.xml" mavenversion="3.0.4">
+			<arg value="versions:set" />
+			<arg value="-DnewVersion=${version}" />
+		</artifact:mvn>
 	</target>
 
 	<target name="bundles">
@@ -60,6 +64,7 @@
 			<fileset dir="${common.target}" includes="*-bundle.jar" />
 			<fileset dir="${mimic.target}" includes="*-bundle.jar" />
 			<fileset dir="${mimic-ext6.target}" includes="*-bundle.jar" />
+			<fileset dir="${mimic-ext7.target}" includes="*-bundle.jar" />
 		</copy>
 	</target>
 
